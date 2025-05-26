@@ -1,0 +1,26 @@
+/* 
+ * INDIGO Fund - Custom Styles
+ * Specific styling for history and stats sections
+ */
+
+.history-title, .history-description, .glance-title {
+  color: #FFFFFF;
+}
+
+.stat-number {
+  font-family: 'NeoGramExtended';
+  font-weight: 700;
+  font-style: normal;
+  color: purple;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.stat-description {
+  font-family: 'NeoGramCondensed';
+  font-weight: 500;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 28px;
+}
