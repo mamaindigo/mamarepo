@@ -1,0 +1,75 @@
+/* 
+ * Background color fix for stats section
+ * This ensures the entire stats section has a consistent background
+ */
+
+/* Fix for the stats section background */
+.stats__wrapper {
+  background-color: #15182B !important; /* Dark blue background */
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure the entire section has the same background */
+.stats__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #15182B;
+  z-index: -1;
+}
+
+/* Fix for the text colors */
+.stats__wrapper .outer__stats .desc h2,
+.stats__wrapper .outer__stats .right__side h2 {
+  color: #FFFFFF !important;
+}
+
+.stats__wrapper .outer__stats .desc p,
+.stats__wrapper .outer__stats .right__side p {
+  color: #FFFFFF !important;
+}
+
+/* Fix for the stats numbers */
+.details__count .el span {
+  color: #5940BE !important; /* Purple color for numbers */
+}
+
+/* Fix for the stats descriptions */
+.details__count .el p {
+  color: #FFFFFF !important;
+}
+
+/* Remove any background images that might be interfering */
+.stats__wrapper {
+  background-image: none !important;
+}
+
+/* Ensure the container doesn't have a background */
+.stats__wrapper .container {
+  background-color: transparent !important;
+}
+
+/* Fix for any other elements in the stats section */
+.stats__wrapper * {
+  background-color: transparent !important;
+}
+
+/* Only the main wrapper should have the background color */
+.stats__wrapper {
+  background-color: #15182B !important;
+}
+
+/* Fix for the outer stats container */
+.outer__stats {
+  background-color: transparent !important;
+}
+
+/* Fix for the left and right sides */
+.stats__wrapper .outer__stats .desc,
+.stats__wrapper .outer__stats .right__side {
+  background-color: transparent !important;
+}

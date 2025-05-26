@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/style-fix.css">
 	<link rel="stylesheet" href="css/custom-styles.css">
 	<link rel="stylesheet" href="css/direct-overrides.css">
+	<link rel="stylesheet" href="css/background-fix.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -31,6 +32,21 @@
 		}
 		.stat-description, .details__count .el p {
 			color: #FFFFFF !important;
+		}
+		
+		/* Fix for the background color issue */
+		.stats__wrapper {
+			background-color: #15182B !important;
+		}
+		.stats__wrapper::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #15182B;
+			z-index: -1;
 		}
 	</style>
 </head>
