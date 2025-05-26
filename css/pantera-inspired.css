@@ -1,0 +1,1480 @@
+/* 
+ * INDIGO Fund - Pantera-Inspired Style Enhancements
+ * Based on analysis of Pantera Capital website design patterns
+ */
+
+/*----------------------------------------
+  1. Font Definitions & Variables
+----------------------------------------*/
+:root {
+  /* Primary colors */
+  --indigo-dark-blue: #15182B;
+  --indigo-purple: #5940BE;
+  --indigo-gold: #E9B737;
+  --indigo-white: #FFFFFF;
+  --indigo-light-gray: #F8F8F8;
+  
+  /* Typography */
+  --heading-font: "NeoGramExtended", sans-serif;
+  --body-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono-font: "IBM Plex Mono", monospace;
+}
+
+/*----------------------------------------
+  2. Global Styles
+----------------------------------------*/
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/*----------------------------------------
+  3. Typography Enhancements
+----------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1;
+  letter-spacing: -0.27rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.18rem;
+}
+
+h3 {
+  font-size: 2rem;
+  letter-spacing: -0.12rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.body-big {
+  font-family: "NeoGramCondensed", var(--body-font);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.4;
+  letter-spacing: -0.02rem;
+}
+
+.body-small {
+  font-family: "NeoGramCondensed", var(--body-font);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  letter-spacing: -0.015rem;
+}
+
+/*----------------------------------------
+  4. Header & Navigation Enhancements
+----------------------------------------*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header.colored {
+  background-color: var(--indigo-dark-blue);
+}
+
+header.visible {
+  transform: translateY(0);
+}
+
+header.closed:not(.visible) {
+  transform: translateY(-100%);
+}
+
+.outer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.nav-logo {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.9;
+}
+
+.right__part {
+  display: flex;
+  align-items: center;
+}
+
+.right__part ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.right__part ul li {
+  margin-right: 2rem;
+  position: relative;
+}
+
+.right__part ul li a {
+  color: var(--indigo-white);
+  text-decoration: none;
+  font-family: var(--mono-font);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.right__part ul li a:hover {
+  color: var(--indigo-gold);
+}
+
+.drop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.dropdown__menu:hover .drop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.drop ul {
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.drop ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.drop ul li a {
+  color: var(--indigo-dark-blue);
+  padding: 0.75rem 1.5rem;
+  display: block;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.drop ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Mobile menu button */
+.menu__btn {
+  display: none;
+}
+
+.menu__btn a {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+
+.menu__btn a span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.menu__btn a span:nth-child(1) {
+  top: 0;
+}
+
+.menu__btn a span:nth-child(2) {
+  top: 9px;
+}
+
+.menu__btn a span:nth-child(3) {
+  top: 18px;
+}
+
+.menu__btn a.opened span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 9px;
+}
+
+.menu__btn a.opened span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu__btn a.opened span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 9px;
+}
+
+/*----------------------------------------
+  5. Hero Section Enhancements
+----------------------------------------*/
+.hero__section {
+  padding: 8rem 0 4rem;
+  background-color: var(--indigo-dark-blue);
+  color: var(--indigo-white);
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.outer__hero {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__section h1 {
+  max-width: 800px;
+  font-size: 6rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.27rem;
+}
+
+.hero__section p {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-family: "NeoGramCondensed", var(--body-font);
+}
+
+.btns a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--indigo-white);
+  color: var(--indigo-dark-blue);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+  border: 1px solid transparent;
+  font-family: var(--mono-font);
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btns a:hover {
+  background-color: transparent;
+  border-color: var(--indigo-white);
+  color: var(--indigo-white);
+}
+
+/*----------------------------------------
+  6. Stats Section Enhancements
+----------------------------------------*/
+.stats__wrapper {
+  padding: 5rem 0;
+  background-color: var(--indigo-light-gray);
+}
+
+.outer__stats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.desc {
+  flex: 0 0 60%;
+  padding-right: 2rem;
+  transform: translateY(0);
+  transition: transform 1s ease;
+}
+
+.right__side {
+  flex: 0 0 40%;
+}
+
+.details__count {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.details__count .el {
+  text-align: center;
+}
+
+.details__count .el span {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--indigo-purple);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font);
+}
+
+.details__count .el span span {
+  font-size: 0.5em;
+  display: inline;
+}
+
+.details__count .el p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.details__count .el p span {
+  font-size: inherit;
+  color: inherit;
+  display: inline;
+  font-weight: inherit;
+}
+
+/*----------------------------------------
+  7. Info Boxes Enhancements
+----------------------------------------*/
+.info__wrapper {
+  padding: 5rem 0;
+}
+
+.outer__info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.outer__info .elem {
+  padding: 2rem;
+  background-color: #f8f8f8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.outer__info .elem.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.outer__info .elem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.outer__info .elem h6 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--indigo-dark-blue);
+  font-family: var(--heading-font);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.outer__info .elem p {
+  margin: 0;
+}
+
+.outer__info .elem.double {
+  grid-column: span 2;
+}
+
+/*----------------------------------------
+  8. Partners Section Enhancements
+----------------------------------------*/
+.partners {
+  padding: 5rem 0;
+  background-color: var(--indigo-light-gray);
+}
+
+.outer__partners h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: var(--heading-font);
+}
+
+.outer__partners .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.outer__partners .elem {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.outer__partners .elem.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.outer__partners .elem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.outer__partners .elem p {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  color: #999;
+}
+
+.outer__partners .elem img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*----------------------------------------
+  9. CTA Section Enhancements
+----------------------------------------*/
+.cta__wrapper {
+  padding: 3rem 0;
+  background-color: var(--indigo-purple);
+  color: var(--indigo-white);
+}
+
+.outer__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.outer__cta h6 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: var(--heading-font);
+}
+
+.outer__cta .btn a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--indigo-white);
+  color: var(--indigo-purple);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+  font-family: var(--mono-font);
+}
+
+.outer__cta .btn a:hover {
+  background-color: var(--indigo-dark-blue);
+  color: var(--indigo-white);
+}
+
+/*----------------------------------------
+  10. Footer Enhancements
+----------------------------------------*/
+footer {
+  background-color: var(--indigo-dark-blue);
+  color: var(--indigo-white);
+  padding: 4rem 0 2rem;
+}
+
+.outer__footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left__foot {
+  flex: 0 0 30%;
+  padding-right: 2rem;
+}
+
+.menus {
+  flex: 0 0 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu {
+  flex: 0 0 33.333%;
+  padding-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.menu p {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-family: var(--mono-font);
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  margin-bottom: 0.75rem;
+}
+
+.menu ul li a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: "NeoGramCondensed", var(--body-font);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.menu ul li a:hover {
+  color: var(--indigo-white);
+}
+
+.socials ul {
+  display: flex;
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.socials ul li {
+  margin-right: 1rem;
+}
+
+.socials ul li a {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.socials ul li a:hover {
+  opacity: 0.8;
+}
+
+.left__foot p {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+  font-family: "NeoGramCondensed", var(--body-font);
+}
+
+/*----------------------------------------
+  11. Blog Grid Enhancements
+----------------------------------------*/
+.blog__grid {
+  padding: 5rem 0;
+}
+
+.outer__blog h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: var(--heading-font);
+  letter-spacing: -0.18rem;
+}
+
+.outer__blog .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.outer__blog .elem {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.outer__blog .elem:hover {
+  transform: translateY(-5px);
+}
+
+.outer__blog .media {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.outer__blog .media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.outer__blog .media.full img {
+  object-fit: contain;
+}
+
+.outer__blog .desc p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: "NeoGramCondensed", var(--body-font);
+}
+
+.outer__blog .bottom__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.outer__blog .left span {
+  display: block;
+  color: var(--indigo-purple);
+  margin-bottom: 0.25rem;
+  font-family: var(--mono-font);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.load__more {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.load__more a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--indigo-dark-blue);
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid var(--indigo-dark-blue);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+  font-family: var(--mono-font);
+}
+
+.load__more a:hover {
+  background-color: var(--indigo-dark-blue);
+  color: var(--indigo-white);
+}
+
+/*----------------------------------------
+  12. Fund Pages Enhancements
+----------------------------------------*/
+.yield__wrapper {
+  padding: 8rem 0 4rem;
+}
+
+.outer__yield {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.outer__yield .desc {
+  flex: 0 0 65%;
+  padding-right: 3rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.outer__yield .info__side {
+  flex: 0 0 35%;
+}
+
+.outer__yield h1 {
+  margin-bottom: 2rem;
+  font-family: var(--heading-font);
+  letter-spacing: -0.27rem;
+}
+
+.outer__yield .desc p {
+  margin-bottom: 1.5rem;
+  font-family: "NeoGramCondensed", var(--body-font);
+  font-size: 1.5rem;
+}
+
+.outer__yield .desc p span {
+  font-weight: 700;
+}
+
+.outer__yield .performance {
+  margin: 3rem 0;
+}
+
+.outer__yield .performance h6 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--heading-font);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.outer__yield .table {
+  overflow-x: auto;
+}
+
+.outer__yield table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.outer__yield table th,
+.outer__yield table td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.outer__yield table th {
+  font-weight: 700;
+  background-color: #f8f8f8;
+}
+
+.info__side .el {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease-in-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.info__side .el:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.info__side .el h6 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--heading-font);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.info__side .el ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.info__side .el ul li {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__side .el ul li p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.info__side .el ul li span {
+  color: #666;
+}
+
+.info__side .el .btn {
+  margin-top: 1.5rem;
+}
+
+.info__side .el .btn a {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--indigo-dark-blue);
+  color: var(--indigo-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+  font-family: var(--mono-font);
+}
+
+.info__side .el .btn a:hover {
+  background-color: var(--indigo-purple);
+}
+
+/*----------------------------------------
+  13. Contact Page Enhancements
+----------------------------------------*/
+.contact__us {
+  padding: 8rem 0 4rem;
+}
+
+.outer__contact h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: var(--heading-font);
+  letter-spacing: -0.18rem;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.contact__grid .elem {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.contact__grid .elem:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.contact__grid .elem:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.contact__grid .elem h6 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--heading-font);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.contact__grid .elem ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact__grid .elem ul li {
+  margin-bottom: 0.75rem;
+  font-family: "NeoGramCondensed", var(--body-font);
+  font-size: 1.5rem;
+}
+
+.contact__grid .elem .btn a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--indigo-dark-blue);
+  color: var(--indigo-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+  font-family: var(--mono-font);
+}
+
+.contact__grid .elem .btn a:hover {
+  background-color: var(--indigo-purple);
+}
+
+/*----------------------------------------
+  14. Invest Form Enhancements
+----------------------------------------*/
+.invest__wrapper {
+  padding: 8rem 0 4rem;
+}
+
+.outer__desc {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.outer__desc .desc {
+  margin-bottom: 3rem;
+}
+
+.outer__desc .desc h2 {
+  font-family: var(--heading-font);
+  letter-spacing: -0.18rem;
+  margin-bottom: 1.5rem;
+}
+
+.outer__desc .desc p {
+  font-family: "NeoGramCondensed", var(--body-font);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.outer__desc form {
+  background-color: #f8f8f8;
+  padding: 3rem;
+  border-radius: 5px;
+}
+
+.outer__desc form h6 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: var(--heading-font);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.group__input {
+  margin-bottom: 1.5rem;
+}
+
+.group__input p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.group__input input,
+.group__input select,
+.group__input textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: var(--body-font);
+  font-size: 1rem;
+}
+
+.group__input input:focus,
+.group__input select:focus,
+.group__input textarea:focus {
+  outline: none;
+  border-color: var(--indigo-purple);
+}
+
+.double {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.check {
+  margin-bottom: 0.75rem;
+}
+
+.container__check {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container__check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.container__check:hover input ~ .checkmark {
+  background-color: #f5f5f5;
+}
+
+.container__check input:checked ~ .checkmark {
+  background-color: var(--indigo-purple);
+  border-color: var(--indigo-purple);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container__check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container__check .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.group__submit {
+  margin-top: 2rem;
+}
+
+.group__submit button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--indigo-dark-blue);
+  color: var(--indigo-white);
+  border: none;
+  font-family: var(--mono-font);
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.group__submit button:hover {
+  background-color: var(--indigo-purple);
+}
+
+/*----------------------------------------
+  15. Article Page Enhancements
+----------------------------------------*/
+.article__wrapper {
+  padding: 8rem 0 4rem;
+}
+
+.outer__article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.outer__article h1 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.18rem;
+}
+
+.outer__article ul {
+  list-style: none;
+  display: flex;
+  margin: 0 0 2rem;
+  padding: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.outer__article ul li {
+  margin-right: 0.5rem;
+}
+
+.outer__article ul li.spacer {
+  margin: 0 0.5rem;
+}
+
+.outer__article .small__media {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.outer__article .small__media img {
+  max-width: 100%;
+  height: auto;
+}
+
+.outer__article h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  font-family: var(--mono-font);
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+}
+
+.outer__article p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.outer__article .media {
+  margin: 2rem 0;
+}
+
+.outer__article .media img {
+  max-width: 100%;
+  height: auto;
+}
+
+.outer__article a {
+  color: var(--indigo-purple);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.outer__article a:hover {
+  color: var(--indigo-dark-blue);
+  text-decoration: underline;
+}
+
+/*----------------------------------------
+  16. Newsletter Popup Enhancements
+----------------------------------------*/
+.newsletter-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-popup.show {
+  display: flex !important;
+}
+
+.newsletter-popup-content {
+  background: linear-gradient(135deg, var(--indigo-dark-blue) 0%, var(--indigo-purple) 100%);
+  color: var(--indigo-white);
+  border-radius: 10px;
+  padding: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s;
+}
+
+.close-popup:hover {
+  color: var(--indigo-white);
+}
+
+.newsletter-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.newsletter-header h3 {
+  font-family: var(--heading-font);
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+.newsletter-header p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--indigo-white);
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-submit {
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background-color: var(--indigo-white);
+  color: var(--indigo-purple);
+  border: none;
+  padding: 14px 20px;
+  font-family: var(--mono-font);
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-message {
+  text-align: center;
+  min-height: 20px;
+  font-size: 14px;
+}
+
+.form-message.success {
+  color: #4caf50;
+}
+
+.form-message.error {
+  color: #f44336;
+}
+
+/*----------------------------------------
+  17. Animations
+----------------------------------------*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*----------------------------------------
+  18. Responsive Styles
+----------------------------------------*/
+@media (max-width: 991px) {
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    letter-spacing: -0.08rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+    letter-spacing: -0.07rem;
+  }
+  
+  .body-big {
+    font-size: 1.5rem;
+  }
+  
+  .outer__header {
+    padding: 1rem 0;
+  }
+  
+  .right__part ul {
+    display: none;
+  }
+  
+  .menu__btn {
+    display: block;
+  }
+  
+  .mobile-menu-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--indigo-dark-blue);
+    z-index: 999;
+    padding-top: 80px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .mobile-menu-content.show {
+    transform: translateY(0);
+  }
+  
+  .mobile-menu-content .menu-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mobile-menu-content .menu-list li {
+    margin: 1rem 0;
+  }
+  
+  .mobile-menu-content .menu-list li a {
+    font-size: 1.5rem;
+  }
+  
+  .outer__yield .desc,
+  .outer__yield .info__side {
+    flex: 0 0 100%;
+    padding-right: 0;
+  }
+  
+  .outer__yield .info__side {
+    margin-top: 3rem;
+  }
+  
+  .outer__footer {
+    flex-direction: column;
+  }
+  
+  .left__foot {
+    flex: 0 0 100%;
+    padding-right: 0;
+    margin-bottom: 3rem;
+  }
+  
+  .menus {
+    flex: 0 0 100%;
+  }
+  
+  .menu {
+    flex: 0 0 50%;
+  }
+  
+  .double {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+    letter-spacing: -0.08rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    letter-spacing: -0.07rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.06rem;
+  }
+  
+  .body-big {
+    font-size: 1.25rem;
+  }
+  
+  .hero__section {
+    padding: 6rem 0 3rem;
+    min-height: auto;
+  }
+  
+  .outer__cta {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .outer__cta h6 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .menu {
+    flex: 0 0 100%;
+    padding-right: 0;
+  }
+  
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .outer__stats {
+    flex-direction: column;
+  }
+  
+  .desc, .right__side {
+    flex: 0 0 100%;
+    padding-right: 0;
+  }
+  
+  .right__side {
+    margin-top: 2rem;
+  }
+  
+  .details__count {
+    grid-template-columns: 1fr;
+  }
+  
+  .outer__info {
+    grid-template-columns: 1fr;
+  }
+  
+  .outer__info .elem.double {
+    grid-column: span 1;
+  }
+  
+  .outer__partners .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .newsletter-popup-content {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+  
+  .newsletter-header h3 {
+    font-size: 22px;
+  }
+  
+  .newsletter-header p {
+    font-size: 14px;
+  }
+}
