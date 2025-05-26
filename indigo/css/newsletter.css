@@ -1,0 +1,148 @@
+/* Newsletter Popup Styles */
+.newsletter-popup {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-popup.show {
+  display: flex !important;
+}
+
+.newsletter-popup-content {
+  background: linear-gradient(135deg, #0A2463 0%, #5940BE 100%);
+  color: white;
+  border-radius: 10px;
+  padding: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s;
+}
+
+.close-popup:hover {
+  color: white;
+}
+
+.newsletter-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.newsletter-header h3 {
+  font-family: "NeogramExtended", sans-serif;
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+.newsletter-header p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-submit {
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background-color: white;
+  color: #5940BE;
+  border: none;
+  padding: 14px 20px;
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-message {
+  text-align: center;
+  min-height: 20px;
+  font-size: 14px;
+}
+
+.form-message.success {
+  color: #4caf50;
+}
+
+.form-message.error {
+  color: #f44336;
+}
+
+@media (max-width: 576px) {
+  .newsletter-popup-content {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+  
+  .newsletter-header h3 {
+    font-size: 22px;
+  }
+  
+  .newsletter-header p {
+    font-size: 14px;
+  }
+}
