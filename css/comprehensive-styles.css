@@ -1,0 +1,213 @@
+/* 
+ * INDIGO Fund - Comprehensive Styling Update
+ * This file addresses navigation, social icons, and text styling requirements
+ */
+
+/* ===== Font Definitions ===== */
+@font-face {
+  font-family: 'NeoGramExtended';
+  src: url('../fonts/NeoGramTrial-BoldExtended.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NeoGramCondensed';
+  src: url('../fonts/NeoGramTrial-RegularCondensed.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Navigation Bar Styling ===== */
+.outer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo sizing */
+.outer__header > a {
+  display: block;
+}
+
+.outer__header > a img {
+  height: 40px;
+  width: auto;
+}
+
+/* Center the navigation menu */
+.right__part {
+  display: flex;
+  align-items: center;
+}
+
+.right__part ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.right__part ul li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.right__part ul li a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Social icons styling */
+.socials {
+  margin-left: 20px;
+}
+
+.socials ul {
+  display: flex;
+  align-items: center;
+}
+
+.socials ul li {
+  margin: 0 8px;
+}
+
+.socials ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.3s ease;
+}
+
+.socials ul li a img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== Info Boxes Styling ===== */
+.info__wrapper {
+  padding: 5rem 0;
+}
+
+.outer__info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Edge, Knowledge, Track record, Experience blocks */
+.outer__info .elem h6 {
+  font-family: 'NeoGramExtended', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #5940BE; /* Purple */
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 1rem;
+}
+
+.outer__info .elem p {
+  font-family: 'NeoGramCondensed', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: rgb(21, 24, 43);
+  font-size: 15px;
+  line-height: 21px;
+  margin: 0;
+}
+
+/* ===== Partners Section Styling ===== */
+.partners {
+  padding: 3rem 0; /* Reduced spacing */
+  background-color: transparent;
+}
+
+.outer__partners h2 {
+  font-family: 'NeoGramExtended', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+  font-size: 60px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.outer__partners .elem p {
+  font-family: 'NeoGramExtended', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Adjust spacing between sections */
+.info__wrapper + .partners {
+  margin-top: -2rem; /* Pull the partners section up */
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 991px) {
+  .right__part ul {
+    display: none;
+  }
+  
+  .menu__btn {
+    display: block;
+  }
+  
+  .right__part {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #15182B;
+    z-index: 999;
+    transition: top 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+  }
+  
+  .outer__partners h2 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .outer__info {
+    grid-template-columns: 1fr;
+  }
+  
+  .outer__partners h2 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  
+  .outer__partners .elem p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

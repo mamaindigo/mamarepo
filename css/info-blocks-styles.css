@@ -1,0 +1,108 @@
+/* 
+ * INDIGO Fund - Info Blocks Styling
+ * Specific styling for Edge, Knowledge, Track record, Experience blocks
+ */
+
+/* Info blocks container */
+.info__wrapper {
+  padding: 5rem 0;
+}
+
+.outer__info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual info blocks */
+.outer__info .elem {
+  padding: 2rem;
+  background-color: #f8f8f8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Block titles - Edge, Knowledge, Track record, Experience */
+.outer__info .elem h6 {
+  font-family: 'NeoGramExtended', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #5940BE; /* Purple */
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 1rem;
+}
+
+/* Block descriptions */
+.outer__info .elem p {
+  font-family: 'NeoGramCondensed', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: rgb(21, 24, 43);
+  font-size: 15px;
+  line-height: 21px;
+  margin: 0;
+}
+
+/* Remove the logo element */
+.outer__info .elem.double {
+  display: none;
+}
+
+/* Partners section styling */
+.partners {
+  padding: 3rem 0; /* Reduced spacing */
+  background-color: transparent;
+}
+
+.outer__partners h2 {
+  font-family: 'NeoGramExtended', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+  font-size: 60px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.outer__partners .elem p {
+  font-family: 'NeoGramExtended', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Adjust spacing between sections */
+.info__wrapper + .partners {
+  margin-top: -2rem; /* Pull the partners section up */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .outer__partners h2 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .outer__info {
+    grid-template-columns: 1fr;
+  }
+  
+  .outer__partners h2 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  
+  .outer__partners .elem p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
