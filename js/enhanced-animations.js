@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector("header").classList.add("closed");
       document.querySelector('header').classList.add('colored');
     } else {
-      document.querySelector("header").classList.removeClass("closed");
+      document.querySelector("header").classList.remove("closed");
       document.querySelector('header').classList.remove('colored');
     }
     
@@ -72,19 +72,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // Handle mobile menu
   function setupMobileMenu() {
     const menuBtn = document.querySelector('.menu__btn a');
-    const mobileMenu = document.querySelector('.mobile-menu-content');
+    const mobileMenu = document.querySelector('.right__part');
     
-    if (menuBtn && mobileMenu) {
+    if (menuBtn) {
       menuBtn.addEventListener('click', function(e) {
         e.preventDefault();
         
         if (this.classList.contains('opened')) {
           this.classList.remove('opened');
-          mobileMenu.classList.remove('show');
+          if (mobileMenu) {
+            mobileMenu.style.top = '-100%';
+          }
           document.body.style.overflow = 'auto';
         } else {
           this.classList.add('opened');
-          mobileMenu.classList.add('show');
+          if (mobileMenu) {
+            mobileMenu.style.top = '0px';
+          }
           document.body.style.overflow = 'hidden';
         }
       });
