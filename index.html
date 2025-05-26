@@ -9,11 +9,30 @@
 	<link rel="stylesheet" href="css/newsletter.css">
 	<link rel="stylesheet" href="css/style-fix.css">
 	<link rel="stylesheet" href="css/custom-styles.css">
+	<link rel="stylesheet" href="css/direct-overrides.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<style>
+		/* Inline styles to ensure the text colors are applied */
+		.history-title, .stats__wrapper .outer__stats .right__side h2.history-title {
+			color: #FFFFFF !important;
+		}
+		.history-description, .stats__wrapper .outer__stats .right__side p.history-description {
+			color: #FFFFFF !important;
+		}
+		.glance-title, .stats__wrapper .outer__stats .desc h2.glance-title {
+			color: #FFFFFF !important;
+		}
+		.stat-number, .details__count .el span {
+			color: purple !important;
+		}
+		.stat-description, .details__count .el p {
+			color: #FFFFFF !important;
+		}
+	</style>
 </head>
 <body>
 	<div class="header__box">
@@ -93,37 +112,37 @@
 		<div class="container">
 			<div class="outer__stats">
 				<div class="desc">
-					<h2 class="glance-title">INDIGO Fund at a Glance</h2>
+					<h2 class="glance-title" id="glance-title" style="color: #FFFFFF !important;">INDIGO Fund at a Glance</h2>
 					<div class="details__count">
 						<div class="el">
-							<span class="stat-number">$X <span>Billion</span></span>
-							<p class="stat-description">Assets Under Management</p>
+							<span class="stat-number" style="color: purple !important;">$X <span>Billion</span></span>
+							<p class="stat-description" style="color: #FFFFFF !important;">Assets Under Management</p>
 						</div>
 						<div class="el">
-							<span class="stat-number">3</span>
-							<p class="stat-description">Core Investment Strategies</p>
+							<span class="stat-number" style="color: purple !important;">3</span>
+							<p class="stat-description" style="color: #FFFFFF !important;">Core Investment Strategies</p>
 						</div>
 						<div class="el">
-							<span class="stat-number">80%</span>
-							<p class="stat-description">Deals Led <br> <span>in the Web3 & Crypto Ecosystem</span></p>
+							<span class="stat-number" style="color: purple !important;">80%</span>
+							<p class="stat-description" style="color: #FFFFFF !important;">Deals Led <br> <span>in the Web3 & Crypto Ecosystem</span></p>
 						</div>
 						<div class="el">
-							<span class="stat-number">100+</span>
-							<p class="stat-description">Venture Investments in Blockchain & DeFi</p>
+							<span class="stat-number" style="color: purple !important;">100+</span>
+							<p class="stat-description" style="color: #FFFFFF !important;">Venture Investments in Blockchain & DeFi</p>
 						</div>
 						<div class="el">
-							<span class="stat-number">120+</span>
-							<p class="stat-description">Early-Stage Token Investments</p>
+							<span class="stat-number" style="color: purple !important;">120+</span>
+							<p class="stat-description" style="color: #FFFFFF !important;">Early-Stage Token Investments</p>
 						</div>
 						<div class="el">
-							<span class="stat-number">50%+</span>
-							<p class="stat-description">Invested Capital Deployed Globally</p>
+							<span class="stat-number" style="color: purple !important;">50%+</span>
+							<p class="stat-description" style="color: #FFFFFF !important;">Invested Capital Deployed Globally</p>
 						</div>
 					</div>
 				</div>
 				<div class="right__side">
-					<h2 class="history-title">A history of firsts & dedication</h2>
-					<p class="history-description">We have been deeply entrenched in cryptocurrency markets since 2015. We have weathered the volatility of several boom and bust cycles. Over the course of the past 8 years we have assessed more than 3000 projects. This has resulted in a wide network & a thorough understanding of the technology and the dynamics of the liquid markets.</p>
+					<h2 class="history-title" id="history-title" style="color: #FFFFFF !important;">A history of firsts & dedication</h2>
+					<p class="history-description" id="history-description" style="color: #FFFFFF !important;">We have been deeply entrenched in cryptocurrency markets since 2015. We have weathered the volatility of several boom and bust cycles. Over the course of the past 8 years we have assessed more than 3000 projects. This has resulted in a wide network & a thorough understanding of the technology and the dynamics of the liquid markets.</p>
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,35 @@
+/* 
+ * Direct CSS overrides for specific elements
+ * Using inline styles approach with CSS
+ */
+
+/* Direct targeting by ID */
+#history-title {
+  color: #FFFFFF !important;
+}
+
+#history-description {
+  color: #FFFFFF !important;
+}
+
+#glance-title {
+  color: #FFFFFF !important;
+}
+
+/* Additional overrides for the stats section */
+.stats__wrapper {
+  background-color: rgba(21, 24, 43, 0.9) !important;
+  color: #FFFFFF !important;
+}
+
+.stats__wrapper h2,
+.stats__wrapper p {
+  color: #FFFFFF !important;
+}
+
+/* Force white text for these specific sections */
+.stats__wrapper .outer__stats .right__side h2,
+.stats__wrapper .outer__stats .right__side p,
+.stats__wrapper .outer__stats .desc h2 {
+  color: #FFFFFF !important;
+}

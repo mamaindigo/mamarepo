@@ -3,24 +3,75 @@
  * Specific styling for history and stats sections
  */
 
-.history-title, .history-description, .glance-title {
-  color: #FFFFFF;
+/* Text color overrides with !important to ensure they take effect */
+.history-title, 
+.stats__wrapper .outer__stats .right__side h2.history-title {
+  color: #FFFFFF !important;
+  font-family: 'NeoGramExtended', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 60px !important;
+  line-height: 60px !important;
 }
 
+.history-description,
+.stats__wrapper .outer__stats .right__side p.history-description {
+  color: #FFFFFF !important;
+  font-family: 'NeoGramCondensed', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  line-height: 28px !important;
+}
+
+.glance-title,
+.stats__wrapper .outer__stats .desc h2.glance-title {
+  color: #FFFFFF !important;
+  font-family: 'NeoGramExtended', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Stats styling */
 .stat-number {
-  font-family: 'NeoGramExtended';
-  font-weight: 700;
-  font-style: normal;
-  color: purple;
-  font-size: 40px;
-  line-height: 50px;
+  font-family: 'NeoGramExtended', sans-serif !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  color: purple !important;
+  font-size: 40px !important;
+  line-height: 50px !important;
 }
 
 .stat-description {
-  font-family: 'NeoGramCondensed';
-  font-weight: 500;
-  font-style: normal;
-  color: #FFFFFF;
-  font-size: 20px;
-  line-height: 28px;
+  font-family: 'NeoGramCondensed', sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  color: #FFFFFF !important;
+  font-size: 20px !important;
+  line-height: 28px !important;
+}
+
+/* Additional selector to target the specific elements in the stats section */
+.details__count .el span {
+  font-family: 'NeoGramExtended', sans-serif !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  color: purple !important;
+  font-size: 40px !important;
+  line-height: 50px !important;
+}
+
+.details__count .el p {
+  font-family: 'NeoGramCondensed', sans-serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  color: #FFFFFF !important;
+  font-size: 20px !important;
+  line-height: 28px !important;
+}
+
+/* Direct targeting of the specific elements */
+.stats__wrapper .outer__stats .right__side h2:contains("A history of firsts") {
+  color: #FFFFFF !important;
+}
+
+.stats__wrapper .outer__stats .desc h2:contains("INDIGO Fund at a Glance") {
+  color: #FFFFFF !important;
 }
