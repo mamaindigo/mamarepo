@@ -1,0 +1,45 @@
+/* History of Firsts Block Styling */
+.history-of-firsts {
+  background-color: rgb(21, 24, 43);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.history-of-firsts .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.history-of-firsts h2 {
+  font-family: "NeoGramExtended", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  color: rgb(255, 255, 255);
+  font-style: normal;
+  margin-bottom: 40px;
+}
+
+.history-of-firsts p {
+  font-family: "NeoGramCondensed", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgb(255, 255, 255);
+  font-style: normal;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .history-of-firsts h2 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  
+  .history-of-firsts p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
