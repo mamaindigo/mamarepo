@@ -1,6 +1,6 @@
 /**
  * INDIGO Fund - Enhanced Animations
- * Based on Pantera Capital website animation patterns
+ * Restored to original functionality
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add/remove colored class based on scroll position
     if (currentScroll > 3) {
       document.querySelector("header").classList.add("closed");
-      document.querySelector('header').classList.add('colored');
+      // Removed the colored class to keep header transparent
     } else {
       document.querySelector("header").classList.remove("closed");
-      document.querySelector('header').classList.remove('colored');
+      // Removed the colored class to keep header transparent
     }
     
     // Show/hide header based on scroll direction
