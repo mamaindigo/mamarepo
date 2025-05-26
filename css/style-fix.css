@@ -1,0 +1,115 @@
+/* 
+ * INDIGO Fund - Style Fix
+ * This file restores the original styling and removes Pantera-inspired colors
+ */
+
+:root {
+  /* Restore original INDIGO colors */
+  --indigo-dark-blue: #15182B;
+  --indigo-purple: #5940BE;
+  --indigo-white: #FFFFFF;
+  --indigo-light-gray: #F8F8F8;
+}
+
+/* Restore original background */
+body {
+  background-color: #FFFFFF;
+  background-image: url('../img/back.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Hero section background fix */
+.hero__section {
+  background-color: transparent;
+  background-image: url('../img/back.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Remove any Pantera-specific colors */
+.hero__section h1,
+.hero__section p {
+  color: #15182B;
+}
+
+/* Restore original button styling */
+.btns a {
+  background-color: #5940BE;
+  color: #FFFFFF;
+  border: 1px solid #5940BE;
+}
+
+.btns a:hover {
+  background-color: transparent;
+  border-color: #5940BE;
+  color: #5940BE;
+}
+
+/* Fix stats section background */
+.stats__wrapper {
+  background-color: transparent;
+}
+
+/* Fix info boxes */
+.outer__info .elem {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Fix CTA section */
+.cta__wrapper {
+  background-color: #5940BE;
+}
+
+/* Fix footer */
+footer {
+  background-color: #15182B;
+}
+
+/* Fix "A history of firsts" section */
+.text__wrapper,
+.strategy__wrapper {
+  background-color: transparent;
+}
+
+.outer__text h2,
+.outer__strategy h2,
+.outer__strategy .top h2 {
+  font-family: "NeoGramExtended", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+  color: #15182B;
+}
+
+.outer__text p,
+.outer__strategy p,
+.outer__strategy .top p {
+  font-family: "NeoGramCondensed", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #15182B;
+}
+
+/* Fix any other Pantera-specific styles */
+.header__box {
+  background-color: transparent;
+}
+
+header.colored {
+  background-color: rgba(21, 24, 43, 0.9);
+}
+
+/* Ensure the INDIGO Fund text is properly styled */
+.hero__section p.indigo-fund-text {
+  font-family: "NeoGramCondensed", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: rgb(21, 24, 43);
+  font-size: 20px;
+  line-height: 28px;
+}
