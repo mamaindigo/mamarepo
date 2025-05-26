@@ -1,0 +1,230 @@
+/* 
+ * INDIGO Fund - Navigation Bar and Social Icons Improvements
+ */
+
+/* Center the navigation menu */
+.outer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+/* Logo sizing */
+.outer__header a img {
+  height: 40px;
+  width: auto;
+}
+
+/* Center the navigation links */
+.right__part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right__part ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.right__part ul li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.right__part ul li a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown menu styling */
+.dropdown__menu .drop {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 220px;
+  border-radius: 4px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown__menu:hover .drop {
+  transform: translateX(-50%) translateY(0);
+}
+
+.drop ul {
+  display: block;
+  padding: 10px 0;
+}
+
+.drop ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.drop ul li a {
+  padding: 8px 20px;
+  display: block;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Social icons styling */
+.socials {
+  margin-left: 20px;
+}
+
+.socials ul {
+  display: flex;
+  align-items: center;
+}
+
+.socials ul li {
+  margin: 0 8px;
+}
+
+.socials ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.socials ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.socials ul li a img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Mobile menu button */
+.menu__btn {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .right__part ul {
+    display: none;
+  }
+  
+  .menu__btn {
+    display: block;
+  }
+  
+  .right__part {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #15182B;
+    z-index: 999;
+    transition: top 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+  }
+  
+  .right__part ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .right__part ul li {
+    margin: 15px 0;
+  }
+  
+  .right__part ul li a {
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  .dropdown__menu .drop {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
+    min-width: auto;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .dropdown__menu:hover .drop {
+    transform: none;
+  }
+  
+  .drop ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 0;
+  }
+  
+  .socials {
+    margin-left: 0;
+  }
+  
+  .socials ul li a {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Footer social icons */
+footer .socials ul li a {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+footer .socials ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+footer .socials ul li a img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Contact page social icons */
+.contact__grid .elem .socials ul li a {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(89, 64, 190, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.contact__grid .elem .socials ul li a:hover {
+  background-color: rgba(89, 64, 190, 0.2);
+}
+
+.contact__grid .elem .socials ul li a img {
+  width: 20px;
+  height: 20px;
+}
