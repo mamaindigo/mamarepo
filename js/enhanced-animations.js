@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function handleHeaderScroll() {
     const currentScroll = window.scrollY;
     
-    // Add/remove colored class based on scroll position
+    // Add/remove closed class based on scroll position
     if (currentScroll > 3) {
       document.querySelector("header").classList.add("closed");
-      // Removed the colored class to keep header transparent
+      // Keep header transparent - don't add colored class
     } else {
       document.querySelector("header").classList.remove("closed");
-      // Removed the colored class to keep header transparent
+      // Keep header transparent - don't add colored class
     }
     
     // Show/hide header based on scroll direction
