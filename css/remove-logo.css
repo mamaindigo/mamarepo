@@ -1,0 +1,18 @@
+/* 
+ * CSS to remove the INDIGO logo from the Experience section
+ */
+
+/* Target the double element that contains the logo */
+.outer__info .elem.double {
+  display: none !important; /* Hide the element completely */
+}
+
+/* Ensure the grid layout adjusts properly after removing the element */
+.outer__info {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+}
+
+/* Make sure the remaining elements take up the full width */
+.outer__info .elem:not(.double) {
+  grid-column: auto !important;
+}
